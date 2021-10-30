@@ -1,9 +1,9 @@
-<div class="flex-row sticky">
+<div class="flex-row">
   <div class="search-button arrow-right"
        [ngClass]="{'arrow-right' : !expanded, 'arrow-left' : expanded}"
-       (mouseenter)="switchArrow()">
+       (mouseenter)="switchArrow()" (click)="switchArrow()">
   </div>
   <input class="search-window" *ngIf="expanded" #search_window />
-  <div class="menu"></div>
+  <div></div>
 </div>
 <div class="search-result" *ngIf="expanded"></div>

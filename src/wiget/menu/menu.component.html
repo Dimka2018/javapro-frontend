@@ -1,0 +1,9 @@
+<div class="menu-bar" [ngClass]='{black : expanded}'>
+  <div class="menu" (mouseenter)="switchExpand()" (click)="switchExpand()"></div>
+</div>
+<div class="menu-window" *ngIf="expanded">
+  <div class="menu-component">All articles</div>
+  <div class="menu-component">New article</div>
+  <div class="menu-component">Update article</div>
+  <div class="menu-component">Suppose article</div>
+</div>

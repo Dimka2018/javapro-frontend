@@ -1,0 +1,47 @@
+.menu {
+  width: 6vw;
+  height: 6vw;
+  background: black;
+}
+
+.menu-bar {
+  width: 40vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.black {
+  background-color: black;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.menu-window {
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  width: 40vw;
+  height: 20vw;
+  padding-top: 2vw;
+}
+
+.menu-component {
+  background: black;
+  width: 100%;
+  height: 25%;
+  color: white;
+  font-size: 2vw;
+  text-align: center;
+}
+
+.menu-component:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

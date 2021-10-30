@@ -12,7 +12,6 @@ export class SearchComponent {
   @ViewChild('search_window', {static: false})
   set content(content: ElementRef) {
     if(content) {
-      console.log(content);
       content.nativeElement.focus();
     }
   }
