@@ -2,24 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import {FormsModule} from "@angular/forms";
-import {MenuComponent} from "./menu.component";
-import {AppRoutingModule} from "../../app/app-routing.module";
+import {AskQuestionComponent} from "./ask_question.component";
 
 @NgModule({
   declarations: [
-    MenuComponent
+    AskQuestionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
   ],
   providers: [],
   exports: [
-    MenuComponent
+    AskQuestionComponent
   ],
-  bootstrap: [MenuComponent]
+  bootstrap: [AskQuestionComponent]
 })
-export class MenuModule {
+export class AskQuestionModule {
 
 }

@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {SearchModule} from "../wiget/search/search.module";
 import {MenuModule} from "../wiget/menu/menu.module";
 import {AllArticlesModule} from "../page/all_articles/all_articles.module";
+import {AskQuestionModule} from "../page/ask_question/ask_question.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {AllArticlesModule} from "../page/all_articles/all_articles.module";
     AppRoutingModule,
     SearchModule,
     MenuModule,
-    AllArticlesModule
+    AllArticlesModule,
+    AskQuestionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

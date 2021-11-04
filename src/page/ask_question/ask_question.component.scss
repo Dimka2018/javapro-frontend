@@ -1,0 +1,27 @@
+.feedback-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-message {
+  width: 50vw;
+  height: 20vw;
+}
+
+.feedback-send-button {
+  width: 15vw;
+  height: 3vw;
+}
+
+.channel {
+  width: 15vw;
+  height: 2vw;
+}
+
+.channel-type {
+  height: 2vw;
+}

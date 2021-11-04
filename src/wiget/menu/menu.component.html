@@ -2,8 +2,8 @@
   <div class="menu" (mouseenter)="switchExpand()" (click)="switchExpand()"></div>
 </div>
 <div class="menu-window" *ngIf="expanded">
-  <div class="menu-component">All articles</div>
-  <div class="menu-component">New article</div>
-  <div class="menu-component">Update article</div>
-  <div class="menu-component">Suppose article</div>
+  <a class="menu-component" routerLink="all-articles">All articles</a>
+  <a class="menu-component">New article</a>
+  <a class="menu-component">Update article</a>
+  <a class="menu-component" routerLink="ask-question">Ask question</a>
 </div>
