@@ -1,0 +1,13 @@
+<div class="article-header">
+  <input class="title">
+</div>
+<div class="NgxEditor__Wrapper">
+  <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+  <ngx-editor
+    [editor]="editor"
+    [ngModel]="html"
+    [disabled]="false"
+    [placeholder]="'Type here...'"
+    (input)="onChange()"
+  ></ngx-editor>
+</div>

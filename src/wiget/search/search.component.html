@@ -1,9 +1,10 @@
-<div class="flex-row">
-  <div class="search-button arrow-right"
-       [ngClass]="{'arrow-right' : !expanded, 'arrow-left' : expanded}"
-       (mouseenter)="switchArrow()" (click)="switchArrow()">
+<div class="result-container sticky-left" *ngIf="expanded">
+  <div class="flex-row">
+    <input class="search-window" #search_window />
   </div>
-  <input class="search-window" *ngIf="expanded" #search_window />
-  <div></div>
+  <div class="search-result"></div>
 </div>
-<div class="search-result" *ngIf="expanded"></div>
+<div class="search-button arrow-right sticky-left"
+     [ngClass]="{'arrow-right' : !expanded, 'arrow-left' : expanded}"
+     (mouseenter)="switchArrow()" (click)="switchArrow()">
+</div>

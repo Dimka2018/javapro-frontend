@@ -3,22 +3,27 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {SearchModule} from "../wiget/search/search.module";
-import {MenuModule} from "../wiget/menu/menu.module";
-import {AllArticlesModule} from "../page/all_articles/all_articles.module";
-import {AskQuestionModule} from "../page/ask_question/ask_question.module";
+import {AskQuestionComponent} from "../page/ask_question/ask_question.component";
+import {NewArticleComponent} from "../page/new-article/new-article.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {SearchComponent} from "../wiget/search/search.component";
+import {MenuComponent} from "../wiget/menu/menu.component";
+import {NgxEditorModule} from "ngx-editor";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AskQuestionComponent,
+    NewArticleComponent,
+    SearchComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    SearchModule,
-    MenuModule,
-    AllArticlesModule,
-    AskQuestionModule
+    NgxEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
