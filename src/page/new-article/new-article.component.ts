@@ -1,5 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Editor, Toolbar} from "ngx-editor";
+import {Editor, toDoc, toHTML, Toolbar} from "ngx-editor";
+import {DocumentService} from "../../service/document.service";
+import {Article} from "../../model/article";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ArticleMapper} from "../../mapper/article.mapper";
 
 @Component({
   selector: 'new-article',
@@ -8,7 +12,8 @@ import {Editor, Toolbar} from "ngx-editor";
 })
 export class NewArticleComponent implements OnInit, OnDestroy {
 
-  html: String = '';
+  article: Article = new Article();
+  html: string = '';
   editor!: Editor;
   toolbar: Toolbar = [
     ["bold", "italic"],
@@ -21,12 +26,18 @@ export class NewArticleComponent implements OnInit, OnDestroy {
     ["align_left", "align_center", "align_right", "align_justify"]
   ];
 
-  onChange(): void {
-    console.log(this.editor)
+  constructor(private docService: DocumentService, private route: ActivatedRoute, private mapper: ArticleMapper) {}
+
+  onChange(html: string) {
+    console.log(this.article)
+    let articleToUpdate = this.mapper.docToArticle(toDoc(html), this.article.id, this.article.title);
+    this.docService.saveDoc(toDoc(html))
   }
 
   ngOnInit(): void {
     this.editor = new Editor();
+    this.article.title = "New Article"
+    this.article.id = Number(this.route.snapshot.paramMap.get('id'))
   }
 
   ngOnDestroy(): void {
