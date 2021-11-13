@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Editor, toDoc, toHTML, Toolbar} from "ngx-editor";
+import {Editor, toDoc, Toolbar} from "ngx-editor";
 import {DocumentService} from "../../service/document.service";
 import {Article} from "../../model/article";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {ArticleMapper} from "../../mapper/article.mapper";
 
 @Component({
@@ -29,9 +29,8 @@ export class NewArticleComponent implements OnInit, OnDestroy {
   constructor(private docService: DocumentService, private route: ActivatedRoute, private mapper: ArticleMapper) {}
 
   onChange(html: string) {
-    console.log(this.article)
     let articleToUpdate = this.mapper.docToArticle(toDoc(html), this.article.id, this.article.title);
-    this.docService.saveDoc(toDoc(html))
+    this.docService.saveDoc(articleToUpdate)
   }
 
   ngOnInit(): void {

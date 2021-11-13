@@ -18,7 +18,7 @@ export class ArticleMapper {
     let article = new Article();
     article.id = id;
     article.title = title;
-    console.log(doc.content.map((component: any) => this.toComponent(component)))
+    article.content = doc.content.map((component: any) => this.toComponent(component))
     return article;
   }
 
