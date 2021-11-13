@@ -7,7 +7,7 @@ export class OrderedList extends ArticleComponent{
   content: ListItem[]
 
   constructor(attributes: Record<string, any>, content: ListItem[]) {
-    super("ordered_list");
+    super("ORDERED_LIST");
     this.attributes = attributes
     this.content = content
   }

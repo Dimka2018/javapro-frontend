@@ -7,7 +7,7 @@ export class BulletList extends ArticleComponent{
   content: ListItem[]
 
   constructor(attributes: Record<string, any>, content: ListItem[]) {
-    super("bullet_list");
+    super("BULLET_LIST");
     this.attributes = attributes
     this.content = content
   }

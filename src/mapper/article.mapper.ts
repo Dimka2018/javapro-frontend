@@ -2,7 +2,7 @@ import {Article} from "../model/article";
 import {Injectable} from "@angular/core";
 import {ArticleComponent} from "../model/component/article-component";
 import {Paragraph} from "../model/component/paragraph";
-import {TextContent} from "../model/content/text-content";
+import {Text} from "../model/content/text";
 import {Blockquote} from "../model/component/blockquote";
 import {OrderedList} from "../model/component/ordered-list";
 import {ListItem} from "../model/component/list-item";
@@ -57,7 +57,7 @@ export class ArticleMapper {
       case "image":
         return new Image(content.attrs);
       default:
-        return new TextContent(content.text, content.marks || [])
+        return new Text(content.text, content.marks || [])
     }
   }
 }

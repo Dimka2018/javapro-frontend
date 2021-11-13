@@ -1,13 +1,13 @@
 import {ArticleComponent} from "./article-component";
-import {TextContent} from "../content/text-content";
+import {Text} from "../content/text";
 
 export class Heading extends ArticleComponent {
 
   attributes: Record<string, any>
-  content: TextContent[]
+  content: Text[]
 
-  constructor(attributes: Record<string, any>, content: TextContent[]) {
-    super("heading");
+  constructor(attributes: Record<string, any>, content: Text[]) {
+    super("HEADING");
     this.attributes = attributes
     this.content = content
   }
