@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "../wiget/search/search.component";
 import {MenuComponent} from "../wiget/menu/menu.component";
 import {NgxEditorModule} from "ngx-editor";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {NgxEditorModule} from "ngx-editor";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,

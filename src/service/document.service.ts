@@ -1,15 +1,19 @@
 import {Injectable} from "@angular/core";
 import {Article} from "../model/article";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class DocumentService {
+
+  constructor(private http: HttpClient) {}
 
   public saveDoc(article: Article): void {
 
   }
 
-  public createArticle(): Article {
-    return new Article()
+  public createArticle(): Observable<string> {
+    return this.http.post<string>("", {});
   }
 
 }
