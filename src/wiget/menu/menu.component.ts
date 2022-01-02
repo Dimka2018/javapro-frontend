@@ -16,7 +16,7 @@ export class MenuComponent {
 
   createArticle() {
     this.docService.createArticle()
-      .subscribe(id => this.router.navigate([`/new-article/${id}`]));
+      .subscribe(article => this.router.navigate([`/new-article/${article.id}`]));
   }
 
   switchExpand() {

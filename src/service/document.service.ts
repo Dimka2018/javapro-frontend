@@ -12,8 +12,8 @@ export class DocumentService {
 
   }
 
-  public createArticle(): Observable<string> {
-    return this.http.post<string>("", {});
+  public createArticle(): Observable<Article> {
+    return this.http.post<Article>("/api/article", {});
   }
 
 }
