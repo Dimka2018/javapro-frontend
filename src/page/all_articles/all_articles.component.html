@@ -1,12 +1,13 @@
-<div class="question-window">
-  <ol>
-    <li>Принципы ООП</li>
-    <li>Принципы ООП</li>
-    <li>Принципы ООП</li>
-    <li>Принципы ООП</li>
-    <li>Принципы ООП</li>
-    <li>Принципы ООП</li>
-    <li>Принципы ООП</li>
-    <li>Принципы ООП</li>
-  </ol>
+<div class="all-articles-page">
+  <div class="question-window">
+    <ol>
+      <li *ngFor="let article of articles">
+        <div class="article">
+          <span>{{article.title || article.id}}</span>
+          <button (click)="changeArticle(article.id || '')" class="change-button">Change</button>
+          <button (click)="deleteArticle(article.id || '')" class="delete-button">Delete</button>
+        </div>
+      </li>
+    </ol>
+  </div>
 </div>

@@ -4,18 +4,20 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AskQuestionComponent} from "../page/ask-question/ask_question.component";
-import {NewArticleComponent} from "../page/new-article/new-article.component";
+import {EditArticleComponent} from "../page/edit-article/edit-article.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "../wiget/search/search.component";
 import {MenuComponent} from "../wiget/menu/menu.component";
 import {NgxEditorModule} from "ngx-editor";
 import {HttpClientModule} from "@angular/common/http";
+import {AllArticlesComponent} from "../page/all_articles/all_articles.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     AskQuestionComponent,
-    NewArticleComponent,
+    EditArticleComponent,
+    AllArticlesComponent,
     SearchComponent,
     MenuComponent
   ],

@@ -1,0 +1,30 @@
+.all-articles-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 3vw;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25vw;
+  height: 2vw;
+}
+
+.delete-button, .change-button {
+  width: 5vw;
+  height: 1.5vw;
+  background: black;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+
+.delete-button:hover, .change-button:hover {
+  cursor: pointer;
+}

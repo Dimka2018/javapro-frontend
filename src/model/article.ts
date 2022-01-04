@@ -1,8 +1,6 @@
-import {ArticleComponent} from "./component/article-component";
-
 export class Article {
 
-  id?: Number
+  id?: string
   title?: string
-  content?: ArticleComponent[]
+  content?: any
 }

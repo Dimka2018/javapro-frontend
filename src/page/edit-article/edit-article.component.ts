@@ -6,11 +6,11 @@ import {ActivatedRoute} from "@angular/router";
 import {ArticleMapper} from "../../mapper/article.mapper";
 
 @Component({
-  selector: 'new-article',
-  templateUrl: './new-article.component.html',
-  styleUrls: ['./new-article.component.scss'],
+  selector: 'edit-article',
+  templateUrl: './edit-article.component.html',
+  styleUrls: ['./edit-article.component.scss'],
 })
-export class NewArticleComponent implements OnInit, OnDestroy {
+export class EditArticleComponent implements OnInit, OnDestroy {
 
   article: Article = new Article();
   html: string = '';
@@ -30,13 +30,24 @@ export class NewArticleComponent implements OnInit, OnDestroy {
 
   onChange(html: string) {
     let articleToUpdate = this.mapper.docToArticle(toDoc(html), this.article.id, this.article.title);
+    this.article = articleToUpdate;
     this.docService.saveDoc(articleToUpdate)
+      .subscribe();
+  }
+
+  onTitleChanged() {
+    this.docService.saveDoc(this.article)
+      .subscribe();
   }
 
   ngOnInit(): void {
     this.editor = new Editor();
-    this.article.title = "New Article"
-    this.article.id = Number(this.route.snapshot.paramMap.get('id'))
+    this.article.id = this.route.snapshot.paramMap.get('id')!.toString()
+    this.docService.getArticle(this.article.id)
+      .subscribe(article => {
+        this.article = article
+        this.html = this.mapper.articleToDoc(article)
+      })
   }
 
   ngOnDestroy(): void {
