@@ -15,6 +15,11 @@
   height: 2vw;
 }
 
+.article-link {
+  font-weight: bold;
+  color: black;
+}
+
 .delete-button, .change-button {
   width: 5vw;
   height: 1.5vw;
@@ -23,6 +28,10 @@
   font-weight: bold;
   outline: none;
   border: none;
+}
+
+.article-link:hover {
+  cursor: pointer;
 }
 
 .delete-button:hover, .change-button:hover {

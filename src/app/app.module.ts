@@ -11,15 +11,19 @@ import {MenuComponent} from "../wiget/menu/menu.component";
 import {NgxEditorModule} from "ngx-editor";
 import {HttpClientModule} from "@angular/common/http";
 import {AllArticlesComponent} from "../page/all_articles/all_articles.component";
+import {ViewArticleComponent} from "../page/view-article/view-article.component";
+import {ContextViewComponent} from "../wiget/context-view/context-view.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     AskQuestionComponent,
     EditArticleComponent,
+    ViewArticleComponent,
     AllArticlesComponent,
     SearchComponent,
-    MenuComponent
+    MenuComponent,
+    ContextViewComponent
   ],
   imports: [
     BrowserModule,

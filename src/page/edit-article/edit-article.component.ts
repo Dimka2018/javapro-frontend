@@ -53,4 +53,5 @@ export class EditArticleComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.editor.destroy();
   }
+
 }

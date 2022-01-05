@@ -18,6 +18,10 @@ export class AllArticlesComponent {
     this.refreshArticles();
   };
 
+  openArticle(id: string) {
+    this.router.navigate([`/articles/${id}`])
+  }
+
   refreshArticles() {
     return this.docService.getArticleList()
       .subscribe(articles => this.articles = articles);

@@ -3,7 +3,7 @@
     <ol>
       <li *ngFor="let article of articles">
         <div class="article">
-          <span>{{article.title || article.id}}</span>
+          <span (click)="openArticle(article.id || '')" class="article-link">{{article.title || article.id}}</span>
           <button (click)="changeArticle(article.id || '')" class="change-button">Change</button>
           <button (click)="deleteArticle(article.id || '')" class="delete-button">Delete</button>
         </div>

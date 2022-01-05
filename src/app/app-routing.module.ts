@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {AllArticlesComponent} from "../page/all_articles/all_articles.component";
 import {AskQuestionComponent} from "../page/ask-question/ask_question.component";
 import {EditArticleComponent} from "../page/edit-article/edit-article.component";
+import {ViewArticleComponent} from "../page/view-article/view-article.component";
 
 const routes: Routes = [
   { path: 'ask-question', component: AskQuestionComponent },
   { path: 'all-articles', component: AllArticlesComponent },
   { path: 'edit-article/:id', component: EditArticleComponent },
+  { path: 'articles/:id', component: ViewArticleComponent },
   { path: '',   redirectTo: '/all-articles', pathMatch: 'full' }
 ];
 

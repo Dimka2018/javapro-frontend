@@ -28,4 +28,8 @@ export class DocumentService {
     return this.http.delete<void>(`/api/articles/${id}`)
   }
 
+  public findArticle(text: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`/api/articles?text=${text}`)
+  }
+
 }
