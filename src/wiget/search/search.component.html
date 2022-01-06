@@ -11,6 +11,7 @@
           </span>
         </div>
         <context-view class="position-center"
+                      [articleId]="article.id"
                       (mouseleave)="setArticleId('')"
                       *ngIf="articleId === article.id">
 
@@ -19,7 +20,7 @@
     </ol>
   </div>
 </div>
-<div class="search-button arrow-right sticky-left"
+<div class="search-button sticky-left"
      [ngClass]="{'arrow-right' : !expanded, 'arrow-left' : expanded}"
      (mouseenter)="switchArrow()" (click)="switchArrow()">
 </div>

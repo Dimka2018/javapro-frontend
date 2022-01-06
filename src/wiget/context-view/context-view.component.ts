@@ -1,4 +1,4 @@
-import {ElementRef, QueryList, ViewChildren} from '@angular/core';
+import {ElementRef, Input, OnDestroy, OnInit, QueryList, ViewChildren} from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { Component } from '@angular/core';
 import {Article} from "../../model/article";
@@ -12,10 +12,25 @@ import {Editor} from "ngx-editor";
   templateUrl: './context-view.component.html',
   styleUrls: ['./context-view.component.scss']
 })
-export class ContextViewComponent {
+export class ContextViewComponent implements OnInit, OnDestroy  {
 
-  article: Article = new Article();
-  editor!: Editor;
+  @Input()
+  articleId: string = '';
+
+  editor: Editor = new Editor();
   html: string = '';
+
+  constructor(private docService: DocumentService, private route: ActivatedRoute, private mapper: ArticleMapper) {}
+
+  ngOnInit(): void {
+    this.docService.getArticle(this.articleId)
+      .subscribe(article => {
+        this.html = this.mapper.articleToDoc(article)
+      })
+  }
+
+  ngOnDestroy(): void {
+    this.editor.destroy();
+  }
 
 }

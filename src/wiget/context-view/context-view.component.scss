@@ -4,6 +4,7 @@
   border: solid black 0.3vw;
   background: white;
   border-radius: 1vw;
+  overflow-y: auto;
 }
 
 .NgxEditor__Wrapper {
@@ -11,4 +12,9 @@
   height: 100%;
   border: none;
   outline: none;
+  margin-top: 0.5vw;
+}
+
+.context-view::-webkit-scrollbar {
+  width: 0;
 }

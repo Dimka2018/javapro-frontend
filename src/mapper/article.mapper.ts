@@ -19,4 +19,5 @@ export class ArticleMapper {
     article.content = doc.content
     return article;
   }
+
 }

@@ -4,6 +4,8 @@ import {DocumentService} from "../../service/document.service";
 import {Article} from "../../model/article";
 import {ActivatedRoute} from "@angular/router";
 import {ArticleMapper} from "../../mapper/article.mapper";
+import {ImageService} from "../../service/image.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'edit-article',
@@ -20,19 +22,26 @@ export class EditArticleComponent implements OnInit, OnDestroy {
     ["underline", "strike"],
     ["code", "blockquote"],
     ["ordered_list", "bullet_list"],
-    [{ heading: ["h1", "h2", "h3", "h4", "h5", "h6"] }],
+    [{heading: ["h1", "h2", "h3", "h4", "h5", "h6"]}],
     ["link", "image"],
     ["text_color", "background_color"],
     ["align_left", "align_center", "align_right", "align_justify"]
   ];
 
-  constructor(private docService: DocumentService, private route: ActivatedRoute, private mapper: ArticleMapper) {}
+  constructor(private docService: DocumentService, private imageService: ImageService,
+              private route: ActivatedRoute, private mapper: ArticleMapper) {
+  }
 
   onChange(html: string) {
-    let articleToUpdate = this.mapper.docToArticle(toDoc(html), this.article.id, this.article.title);
-    this.article = articleToUpdate;
-    this.docService.saveDoc(articleToUpdate)
-      .subscribe();
+    let doc = toDoc(html);
+    this.prepareContent(doc.content).then(() => {
+      let articleToUpdate = this.mapper.docToArticle(doc, this.article.id, this.article.title);
+      this.article = articleToUpdate;
+      this.html = this.mapper.articleToDoc(articleToUpdate)
+      console.log(articleToUpdate)
+      this.docService.saveDoc(articleToUpdate)
+        .subscribe();
+    });
   }
 
   onTitleChanged() {
@@ -48,6 +57,25 @@ export class EditArticleComponent implements OnInit, OnDestroy {
         this.article = article
         this.html = this.mapper.articleToDoc(article)
       })
+  }
+
+  private async prepareContent(content: any) {
+    for (let element of content) {
+      await this.prepareElement(element);
+    }
+  }
+
+  private async prepareElement(element: any) {
+    if (element.type === 'image') {
+      if (element.attrs.src.startsWith('http')) {
+        await this.imageService.saveImage(element.attrs.src).toPromise()
+          .then(image => element.attrs.src = `/api/images/${image.id}`)
+      }
+    } else if (element.content) {
+      for (let contentElement of element.content) {
+        await this.prepareElement(contentElement);
+      }
+    }
   }
 
   ngOnDestroy(): void {

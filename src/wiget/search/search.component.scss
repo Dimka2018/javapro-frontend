@@ -5,24 +5,8 @@
   left: 0;
 }
 
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 2vw solid transparent;
-  border-bottom: 2vw solid transparent;
-  border-left: 2vw solid black;
-}
-
 .result-container {
   width: 100vw;
-}
-
-.arrow-left {
-  width: 0;
-  height: 0;
-  border-top: 2vw solid transparent;
-  border-bottom: 2vw solid transparent;
-  border-right:2vw solid black;
 }
 
 .flex-row {
@@ -76,6 +60,7 @@
   top: 3vw;
   left: 15vw;
 }
+
 
 .search-button:hover {
   cursor: pointer;
