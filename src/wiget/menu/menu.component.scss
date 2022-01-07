@@ -1,7 +1,14 @@
 .menu {
   width: 4vw;
   height: 4vw;
-  background: black;
+}
+
+.black-menu {
+  background: url("../../assets/images/menu-black.svg") white no-repeat center;
+}
+
+.white-menu {
+  background: url("../../assets/images/menu-white.svg") black no-repeat center;
 }
 
 .menu-bar {

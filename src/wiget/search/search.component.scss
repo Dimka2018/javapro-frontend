@@ -25,15 +25,11 @@
 
 .search-result {
   width: 100vw;
-  height: 100vh;
   background: white;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding-top: 2vw;
-}
-
-.search-result {
-  width: 100vw;
 }
 
 .align-center {
@@ -42,15 +38,32 @@
   justify-content: center;
 }
 
-.article {
+.record {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 25vw;
-  height: 2vw;
+  width: 29vw;
 }
 
-.article-link {
+.square-box {
+  width: 2vw;
+  height: 2vw;
+  border: black solid 4px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 2vw;
+  border: black solid 4px;
+  border-radius: 4px;
   font-weight: bold;
   color: black;
 }
@@ -61,6 +74,18 @@
   left: 15vw;
 }
 
+.search-button {
+  width: 4vw;
+  height: 4vw;
+}
+
+.arrow-right {
+  background: url("../../assets/images/arrow-right.svg") no-repeat center;
+}
+
+.arrow-left {
+  background: url("../../assets/images/arrow-left.svg") no-repeat center;
+}
 
 .search-button:hover {
   cursor: pointer;
