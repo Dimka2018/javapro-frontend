@@ -5,8 +5,8 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'all-articles',
-  templateUrl: './all_articles.component.html',
-  styleUrls: ['./all_articles.component.scss']
+  templateUrl: './all-articles.component.html',
+  styleUrls: ['./all-articles.component.scss']
 })
 export class AllArticlesComponent {
   public articles: Article[] = [];
