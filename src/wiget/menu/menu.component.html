@@ -8,5 +8,6 @@
   <a class="menu-component" routerLink="all-articles">All articles</a>
   <a class="menu-component" (click)="createArticle()">New article</a>
   <a class="menu-component" routerLink="ask-question">Ask question</a>
-  <a class="menu-component" routerLink="login">Login</a>
+  <a class="menu-component login" routerLink="login" *ngIf="!isAuthorized()"></a>
+  <a class="menu-component logout" (click)="logout()" *ngIf="isAuthorized()"></a>
 </div>

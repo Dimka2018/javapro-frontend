@@ -53,3 +53,13 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.login {
+  background: url("../../assets/images/signin.svg") transparent no-repeat center;
+  background-size: 3vw;
+}
+
+.logout {
+  background: url("../../assets/images/signout.svg") transparent no-repeat center;
+  background-size: 3vw;
+}

@@ -6,11 +6,21 @@ import {User} from "../model/user";
 @Injectable({providedIn: 'root'})
 export class UserService {
 
+  public user?: User;
+
   constructor(private http: HttpClient) {
   }
 
   public login(user: User): Observable<User> {
-    return this.http.post<User>('/api/login', user)
+    return this.http.post<User>('/api/users/login', user)
+  }
+
+  public logout(): Observable<void> {
+    return this.http.get<void>('/api/users/logout')
+      .pipe(o => {
+        this.user = undefined
+        return o
+      })
   }
 
 }

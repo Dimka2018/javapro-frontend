@@ -19,6 +19,7 @@ export class LoginComponent {
     this.userService.login(this.user)
       .subscribe(user => {
         this.user = user;
+        this.userService.user = user
         this.router.navigate([`/all-articles`])
       })
   }

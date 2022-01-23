@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {DocumentService} from "../../service/document.service";
 import {Router} from "@angular/router";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'menu',
@@ -11,7 +12,7 @@ export class MenuComponent {
 
   public expanded: Boolean = false;
 
-  constructor(private docService: DocumentService, private router: Router) {
+  constructor(private docService: DocumentService, private userService: UserService, private router: Router) {
   }
 
   createArticle() {
@@ -21,5 +22,13 @@ export class MenuComponent {
 
   switchExpand() {
     this.expanded = !this.expanded
+  }
+
+  isAuthorized() {
+    return this.userService.user
+  }
+
+  logout() {
+    this.userService.logout()
   }
 }

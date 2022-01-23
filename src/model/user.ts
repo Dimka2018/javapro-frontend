@@ -1,6 +1,6 @@
 export class User {
 
-  login?: string
+  username?: string
   password?: string
   permissions?: string[]
 
