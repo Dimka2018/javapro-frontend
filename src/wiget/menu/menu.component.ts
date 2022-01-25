@@ -31,4 +31,8 @@ export class MenuComponent {
   logout() {
     this.userService.logout()
   }
+
+  hasPermission(permission: string) {
+    return this.userService
+  }
 }

@@ -23,4 +23,8 @@ export class UserService {
       })
   }
 
+  public hasPermission(permission: string): boolean {
+    return !!this.user && !!this.user.permissions && this.user.permissions.includes(permission);
+  }
+
 }

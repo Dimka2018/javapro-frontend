@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {DocumentService} from "../../service/document.service";
 import {Article} from "../../model/article";
 import {Router} from "@angular/router";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'all-articles',
@@ -11,7 +12,7 @@ import {Router} from "@angular/router";
 export class AllArticlesComponent {
   public articles: Article[] = [];
 
-  constructor(private docService: DocumentService, private router: Router) {
+  constructor(private docService: DocumentService, private userService: UserService, private router: Router) {
   }
 
   ngOnInit() {
@@ -34,5 +35,9 @@ export class AllArticlesComponent {
   deleteArticle(id: string) {
     this.docService.deleteArticle(id)
       .subscribe(() => this.refreshArticles())
+  }
+
+  hasPermission(permission: string): boolean {
+    return this.userService.hasPermission(permission)
   }
 }
