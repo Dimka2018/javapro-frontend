@@ -67,7 +67,7 @@ export class EditArticleComponent implements OnInit, OnDestroy {
   private async prepareElement(element: any) {
     if (element.type === 'image') {
       if (element.attrs.src.startsWith('http')) {
-        await this.imageService.saveImage(element.attrs.src).toPromise()
+        await this.imageService.saveImage(element.attrs.src, this.article.id!).toPromise()
           .then(image => element.attrs.src = `/api/images/${image.id}`)
       }
     } else if (element.content) {

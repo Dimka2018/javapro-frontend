@@ -8,8 +8,8 @@ export class ImageService {
 
   constructor(private http: HttpClient) {}
 
-  public saveImage(src: string): Observable<Image> {
-    return this.http.post<Image>('/api/image', {src: src})
+  public saveImage(src: string, articleId: string): Observable<Image> {
+    return this.http.post<Image>('/api/image', {src: src, articleId: articleId})
   }
 
 }
